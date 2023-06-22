@@ -10,3 +10,4 @@
 [Tue Jun 20 21:21:19.366689 2023] [core:error] [pid 13467:tid 140097974417088] (13)Permission denied: [client 127.0.0.1:55726] AH00035: access to / denied (filesystem path '/var/www/html/rowskip/public') because search permissions are missing on a component of the path
 [Tue Jun 20 21:21:19.522496 2023] [core:error] [pid 13467:tid 140097982809792] (13)Permission denied: [client 127.0.0.1:55726] AH00035: access to / denied (filesystem path '/var/www/html/rowskip/public') because search permissions are missing on a component of the path
 [Wed Jun 21 17:52:36.809511 2023] [core:error] [pid 5477:tid 140584975050432] (13)Permission denied: [client 127.0.0.1:53102] AH00035: access to / denied (filesystem path '/var/www/html/rowskip/public') because search permissions are missing on a component of the path
+[Thu Jun 22 16:09:25.368726 2023] [php:error] [pid 170481] [client 127.0.0.1:42806] script '/var/www/html/rowskip/public/tv.blade.php' not found or unable to stat
