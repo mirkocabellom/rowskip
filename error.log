@@ -31,3 +31,4 @@
 [Tue Jun 27 12:42:21.782849 2023] [php:error] [pid 223516] [client 127.0.0.1:43102] script '/var/www/html/rowskip/public/inicio.blade.php' not found or unable to stat
 [Tue Jun 27 12:42:21.965601 2023] [php:error] [pid 223516] [client 127.0.0.1:43102] script '/var/www/html/rowskip/public/inicio.blade.php' not found or unable to stat
 [Tue Jun 27 14:23:56.835733 2023] [php:error] [pid 223517] [client 127.0.0.1:46276] script '/var/www/html/rowskip/public/inicio.blade.php' not found or unable to stat
+[Wed Jun 28 12:55:45.856144 2023] [php:error] [pid 228651] [client 127.0.0.1:46944] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /var/www/html/rowskip/routes/web.php on line 4, referer: http://localhost/monitor

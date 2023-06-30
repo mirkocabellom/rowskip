@@ -7,6 +7,9 @@
           <h6 class="m-0 font-weight-bold text-primary">Listado de Pacientes</h6>
         </div>
         <div class="card-body">
+            {{-- @foreach($citas as $cita) --}}
+            <h1>{{ $consultas->nombre }}</h1>
+            {{-- @endforeach --}}
             <table id="grid_pacientes" class="table table-striped">
                 <thead>
                     <tr>
