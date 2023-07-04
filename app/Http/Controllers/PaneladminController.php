@@ -15,7 +15,14 @@ class PaneladminController extends Controller
 
     public function index(Request $request)
     {
-        $consultas = $this->consultas->find();
+        $pac_rut='18378651';
+        $consultas = $this->consultas->datos_pac($pac_rut);
+        return view('monitor',compact('consultas'));
+    }
+
+    public function obtener_token(Request $request)
+    {
+        $consultas = $this->consultas->obtener_token();
         return view('monitor',compact('consultas'));
     }
 }

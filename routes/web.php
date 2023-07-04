@@ -8,7 +8,7 @@ Route::view('/usuario','usuario')->name('usuario');
 Route::view('/estacion','estacion')->name('estacion');
 Route::view('/gestor_estacion','gestor_estacion')->name('gestor_estacion');
 
-Route::get('/monitor', [PaneladminController::class, 'index'])->name('monitor');;
+Route::get('/monitor', [PaneladminController::class, 'obtener_token'])->name('monitor');;
 
 Route::view('/','inicio')->name('inicio');
 Route::view('/tv','tv')->name('tv');
