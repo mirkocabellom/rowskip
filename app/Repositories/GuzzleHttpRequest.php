@@ -19,7 +19,7 @@ class GuzzleHttpRequest
 
     protected function post($url)
     {
-        $response = $this->client->request('POST',$url);
-        return json_decode( $response->getBody()->getContents() );
+        $response = $this->client->post($url);
+        return json_decode($response->getBody(), true);
     }
 }

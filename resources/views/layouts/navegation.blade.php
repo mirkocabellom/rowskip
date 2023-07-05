@@ -21,7 +21,12 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('usuario') }}"><span>Usuarios</span></a>
     </li>
-
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('agenda') }}"><span>Agendas</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('citas') }}"><span>Citas</span></a>
+    </li>
 
     <hr class="sidebar-divider d-none d-md-block">
 

@@ -8,7 +8,7 @@
         </div>
         <div class="card-body">
             {{-- @foreach($consultas as $cons) --}}
-            <h1>{{ $consultas}}</h1>
+            {{-- <h1>{{ $consultas->nombre }}</h1> --}}
             {{-- @endforeach --}}
             <table id="grid_pacientes" class="table table-striped">
                 <thead>

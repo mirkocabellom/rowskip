@@ -25,4 +25,21 @@ class PaneladminController extends Controller
         $consultas = $this->consultas->obtener_token();
         return view('monitor',compact('consultas'));
     }
+
+    public function list_age_disp(Request $request)
+    {
+        $est_cod='100';
+        $consultas = $this->consultas->list_age_disp($est_cod);
+        return view('agenda',compact('consultas'));
+    }
+
+    public function list_appointment(Request $request)
+    {
+        $day='05';
+        $mounth='07';
+        $year='2023';
+        $est_cod='100';
+        $consultas = $this->consultas->list_appointment($day,$mounth,$year,$est_cod);
+        return view('citas',compact('consultas'));
+    }
 }
