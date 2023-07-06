@@ -17,13 +17,13 @@ class PaneladminController extends Controller
     {
         $pac_rut='18378651';
         $consultas = $this->consultas->datos_pac($pac_rut);
-        return view('monitor',compact('consultas'));
+        return view('panel',compact('consultas'));
     }
 
     public function obtener_token(Request $request)
     {
         $consultas = $this->consultas->obtener_token();
-        return view('monitor',compact('consultas'));
+        return view('panel',compact('consultas'));
     }
 
     public function list_age_disp(Request $request)

@@ -10,26 +10,22 @@
             <table id="grid_pacientes" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Edad</th>
-                        <th>Hora cita</th>
-                        <th>Medico</th>
-                        <th>Recaudación</th>
-                        <th>Llegó</th>
-                        <th>Signos Vitales</th>
+                        <th>Rut</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Nombre de usuario</th>
+                        <th>Rol</th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>dddd</td>
-                        <td>dddd</td>
-                        <td>dddd</td>
-                        <td>dddd</td>
-                        <td>dddd</td>
-                        <td>dddd</td>
-                        <td>dddd</td>
-                        <td>dddd</td>
+                        <td>18.378.651-2</td>
+                        <td>Mirko</td>
+                        <td>Cabello Molina</td>
+                        <td>haskell</td>
+                        <td>Admin</td>
+                        <td><i class="fas fa-edit"></i></td>
                     </tr>
                 </tbody>
             </table>

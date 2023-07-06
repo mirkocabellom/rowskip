@@ -10,16 +10,16 @@
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('monitor') }}"><span>Monitor</span></a>
+        <a class="nav-link" href="{{ route('dashboard') }}"><span>Dashboard</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('usuario') }}"><span>Usuarios</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('estacion') }}"><span>Estaciones</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('gestor_estacion') }}"><span>Gestor estaciones</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('usuario') }}"><span>Usuarios</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">

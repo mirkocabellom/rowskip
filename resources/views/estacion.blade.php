@@ -10,22 +10,14 @@
             <table id="grid_pacientes" class="table table-striped">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Edad</th>
-                        <th>Hora cita</th>
-                        <th>Medico</th>
-                        <th>Recaudación</th>
-                        <th>Llegó</th>
-                        <th>Signos Vitales</th>
+                        <th>Descripción</th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>dddd</td>
-                        <td>dddd</td>
-                        <td>dddd</td>
-                        <td>dddd</td>
                         <td>dddd</td>
                         <td>dddd</td>
                         <td>dddd</td>
