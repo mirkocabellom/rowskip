@@ -42,4 +42,12 @@ class PaneladminController extends Controller
         $consultas = $this->consultas->list_appointment($day,$mounth,$year,$est_cod);
         return view('citas',compact('consultas'));
     }
+
+    public function find_appointment_pac(Request $request)
+    {
+        $pac_rut='27364886-0';
+        $est_cod='100';
+        $consultas = $this->consultas->find_appointment_pac($pac_rut,$est_cod);
+        return view('totem',compact('consultas'));
+    }
 }
