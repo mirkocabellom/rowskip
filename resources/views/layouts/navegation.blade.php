@@ -22,13 +22,13 @@
         <a class="nav-link" href="{{ route('gestor_estacion') }}"><span>Gestor estaciones</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+        <a class="nav-link" data-bs-toggle="collapse" href="#multiCollapseA1" role="button" aria-expanded="false" aria-controls="multiCollapseA1">
             <i class="fas fa-fw fa-folder"></i>
             <span>Modulo Agenda</span>
             <i class="fas fa-angle-down" style="float:right; margin-top: 5px;"></i>
         </a>
 
-        <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="collapse multi-collapse" id="multiCollapseA1">
             <div class="card card-body">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Adm. Agendas:</h6>
@@ -36,6 +36,26 @@
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Citas:</h6>
                     <a class="collapse-item" href="{{ route('citas') }}">Citas</a>
+                </div>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#multiCollapseU2" role="button" aria-expanded="false" aria-controls="multiCollapseU2">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Modulo Urgencia</span>
+            <i class="fas fa-angle-down" style="float:right; margin-top: 5px;"></i>
+        </a>
+
+        <div class="collapse multi-collapse" id="multiCollapseU2">
+            <div class="card card-body">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Adm. Urgencia:</h6>
+                    <a class="collapse-item" href="{{ route('agenda') }}">Other</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Urg:</h6>
+                    <a class="collapse-item" href="{{ route('citas') }}">Urg</a>
                 </div>
             </div>
         </div>

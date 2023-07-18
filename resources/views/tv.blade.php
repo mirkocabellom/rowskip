@@ -86,6 +86,6 @@
         <!-- Core theme JS-->
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
         <script src="/js/ohsnap.min.js" type="text/javascript"></script>
-        <script src="/js/tv.js"></script>
+        <script src="/js/panel_admin/tv.js"></script>
     </body>
 </html>

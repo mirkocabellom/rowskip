@@ -10,6 +10,7 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <link href="/css/monitor.css" rel="stylesheet">
         <link href="/DataTables/datatables.min.css" rel="stylesheet"/>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
     <body id="page-top">

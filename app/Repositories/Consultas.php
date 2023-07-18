@@ -5,10 +5,10 @@ class Consultas extends GuzzleHttpRequest
 {
 	public function obtener_token()
     {
-        return $this->post("api/auth/login");
+        return $this->post2("api/auth/login");
     }
 
-    protected function post($url)
+    protected function post2($url)
     {
         $response = $this->client->post($url, [
             'headers' => [
@@ -24,8 +24,6 @@ class Consultas extends GuzzleHttpRequest
 		$accessToken = $responseData['access_token'];
 
 		return $accessToken;
-
-        // return json_decode($response->getBody(), true);
     }
 
 	public function datos_pac($pac_rut)
@@ -61,7 +59,6 @@ class Consultas extends GuzzleHttpRequest
 		]);
 
 		return json_decode($response->getBody(), true);	
-
 	}
 
 	public function list_appointment_prof($day, $mounth, $year, $est_cod,$prof_rut)
@@ -122,5 +119,49 @@ class Consultas extends GuzzleHttpRequest
 		]);
 
 		return json_decode($response->getBody(), true);	
+	}
+
+	public function listuser($est_cod)
+	{
+		$token = $this->obtener_token();
+		$headers = [
+			'Content-Type' => 'application/json',
+		    'X-Requested-with' => 'XMLHttpRequest',
+		    'Authorization' => 'Bearer ' . $token,
+		];
+		$response = $this->client->get("api/auth/datalist/user/{$est_cod}", [
+		    'headers' => $headers
+		]);
+
+		return json_decode($response->getBody(), true);	
+	}
+
+	public function registrar_usuario($datos)
+	{
+		$token = $this->obtener_token();
+		
+		$response = $this->post("api/registrar_usuario", [
+			'headers' => [
+				'Authorization' => 'Bearer ' . $token,
+				'Content-Type' => 'application/json'
+			],
+			'json' => $datos,
+		]);
+		$jsonResponse = json_encode($response);
+    	return $jsonResponse;
+		// var_dump($jsonResponse);
+
+		// if ($response && $response->getStatusCode() === 201) {
+		// 	$responseData = $response->json();
+		// 	return response()->json([
+		// 		'message' => $responseData['message'],
+		// 		'data' => $responseData['data'],
+		// 	], 201);
+		// } else {
+		// 	return response()->json([
+		// 		'message' => 'Error al enviar los datos',
+		// 		'error' => $response ? $response->json() : null,
+		// 	], $response ? $response->getStatusCode() : 500);
+		// }
 	}
 }

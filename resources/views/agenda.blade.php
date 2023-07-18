@@ -30,5 +30,5 @@
 </div> 
 @endsection('content')	
 @section('scripts')
-    <script src="{{ asset('js/agenda.js') }}"></script>
+    <script src="{{ asset('js/panel_admin/agenda.js') }}"></script>
 @endsection

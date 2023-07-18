@@ -46,5 +46,5 @@
 </div> 
 @endsection('content')	
 @section('scripts')
-    <script src="{{ asset('js/citas.js') }}"></script>
+    <script src="{{ asset('js/panel_admin/citas.js') }}"></script>
 @endsection

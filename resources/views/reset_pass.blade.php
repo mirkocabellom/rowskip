@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Forgot Password</title>
+    <title>SkipRow - Reset Password</title>
 
     <!-- Custom fonts for this template-->
     <link href="/css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -37,6 +37,7 @@
                         <div class="row">
                             <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                             <div class="col-lg-6">
+                                <a href="{{ route('panel') }}" class="btn btn-warning" style="float:right;border-radius: 20px;margin-top: 5px;">X</a>
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">Desea cambiar su clave</h1>
@@ -60,7 +61,7 @@
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Repite Nueva Contraseña">
                                         </div>
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                        <a href="login.html" class="btn btn-warning btn-user btn-block">
                                             Grabar tu nueva contraseña
                                         </a>
                                     </form>
