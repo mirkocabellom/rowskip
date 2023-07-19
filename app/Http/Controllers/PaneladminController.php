@@ -71,11 +71,9 @@ class PaneladminController extends Controller
             'EST_COD' => $request->input('cmb_estab')
         ];
 
-        // $jsonData = json_encode($datos);
-
         $response = $this->consultas->registrar_usuario($datos);
+        return $response;
 
-        var_dump("===========>".$response);
         // if ($response && $response->status() === 201) {
         //     $responseData = $response->json();
         //     return response()->json([

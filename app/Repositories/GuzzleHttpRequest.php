@@ -23,6 +23,6 @@ class GuzzleHttpRequest
             'json' => $datos
         ]);
 
-        return $response->getBody()->getContents();
+        return json_decode( $response->getBody()->getContents() );
     }
 }

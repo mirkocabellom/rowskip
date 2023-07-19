@@ -140,28 +140,19 @@ class Consultas extends GuzzleHttpRequest
 	{
 		$token = $this->obtener_token();
 		
-		$response = $this->post("api/registrar_usuario", [
-			'headers' => [
-				'Authorization' => 'Bearer ' . $token,
-				'Content-Type' => 'application/json'
-			],
-			'json' => $datos,
-		]);
-		$jsonResponse = json_encode($response);
-    	return $jsonResponse;
-		// var_dump($jsonResponse);
+		$headers = [
+			'Content-Type' => 'application/json',
+		    'X-Requested-with' => 'XMLHttpRequest',
+		    'Authorization' => 'Bearer ' . $token,
+		];
 
-		// if ($response && $response->getStatusCode() === 201) {
-		// 	$responseData = $response->json();
-		// 	return response()->json([
-		// 		'message' => $responseData['message'],
-		// 		'data' => $responseData['data'],
-		// 	], 201);
-		// } else {
-		// 	return response()->json([
-		// 		'message' => 'Error al enviar los datos',
-		// 		'error' => $response ? $response->json() : null,
-		// 	], $response ? $response->getStatusCode() : 500);
-		// }
+		$response = $this->client->post("api/auth/registrar_usuario", [
+		    'headers' => $headers,
+			'json' => $datos
+		]);
+
+		$jsonResponse = $response->getBody()->getContents();
+
+    	return $jsonResponse;
 	}
 }
