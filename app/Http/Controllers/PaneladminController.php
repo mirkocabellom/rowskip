@@ -71,21 +71,14 @@ class PaneladminController extends Controller
             'EST_COD' => $request->input('cmb_estab')
         ];
 
-        $response = $this->consultas->registrar_usuario($datos);
-        return $response;
-
-        // if ($response && $response->status() === 201) {
-        //     $responseData = $response->json();
-        //     return response()->json([
-        //         'message' => $responseData['message'],
-        //         'data' => $responseData['data'],
-        //     ], 201);
-        // } else {
-        //     return response()->json([
-        //         'message' => 'Error al enviar los datos',
-        //         'error' => $response,
-        //     ], $response->status());
-        // }
+        try {
+            $response = $this->consultas->registrar_usuario($datos);
+            $request->session()->flash('success', 'Usuario registrado correctamente');
+        } catch (\Exception $e) {
+            $request->session()->flash('error', 'Error 500: El usuario ya existe');
+        }
+    
+        return redirect()->back();
     }
 
 }

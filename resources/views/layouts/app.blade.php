@@ -11,6 +11,14 @@
         <link href="/css/monitor.css" rel="stylesheet">
         <link href="/DataTables/datatables.min.css" rel="stylesheet"/>
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <style>
+            .invalid {
+                border-color: red;
+            }
+            .valid {
+                border-color: green;
+            }
+        </style>
     </head>
 
     <body id="page-top">

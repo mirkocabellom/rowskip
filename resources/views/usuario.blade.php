@@ -84,9 +84,7 @@
                 <div class="form-group">
                     <select class="form-select" aria-label="Default select example" id="cmb_estab" name="cmb_estab">
                     <option selected>Seleccione Establecimiento</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="100">One</option>
                     </select>
                 </div>
         </div>
@@ -98,7 +96,12 @@
     </div>
     </div>
 </form>
+@if (session('success'))
+    <div class="message">{{ session('success') }}</div>
+@endif
+
 @endsection('content')  
 @section('scripts')
     <script src="{{ asset('js/panel_admin/usuario.js') }}"></script>
+    <script src="{{ asset('js/validarRut.js') }}"></script>
 @endsection
