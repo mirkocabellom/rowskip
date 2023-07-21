@@ -81,4 +81,55 @@ class PaneladminController extends Controller
         return redirect()->back();
     }
 
+    public function panel_admin_login(Request $request)
+    {
+        $usu_rut = $request->input('usu_rut');
+        $password = $request->input('usu_pass');
+
+        $datos = [
+            'USU_RUT' => $usu_rut,
+            'PASSWORD' => $password
+        ];
+
+        try {
+            $usuario = $this->consultas->cons_user($datos);
+    
+            if ($usuario) {
+                $request->session()->flash('success', 'Usuario correcto');
+                return redirect()->route('panel');
+            } else {
+                $request->session()->flash('error', 'El usuario o contraseña es incorrecta');
+            }
+        } catch (\Exception $e) {
+            $request->session()->flash('error', 'Error 500: El usuario o contraseña es incorrecta');
+        }
+    
+        return redirect()->back();
+    }
+
+    public function primera_pass(Request $request)
+    {
+        // $usu_cod = $request->input('usu_cod');
+        // $password = $request->input('password');
+        $estado = 0;
+
+        // Cifrar la contraseña
+        $hashedPassword = bcrypt($password);
+
+        $datos = [
+            'usu_cod' => $usu_cod,
+            'password' => $hashedPassword,
+            'estado' => $estado
+        ];
+
+        try {
+            $response = $this->consultas->primera_password($datos);
+            $request->session()->flash('success', 'Contraseña cambiada correctamente');
+        } catch (\Exception $e) {
+            $request->session()->flash('error', 'Error al cambiar la contraseña');
+        }
+
+        return redirect()->back();
+    }
+
 }

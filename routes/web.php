@@ -15,6 +15,8 @@ Route::get('/citas', [PaneladminController::class, 'list_appointment'])->name('c
 Route::get('/usuario', [PaneladminController::class, 'listuser'])->name('usuario');
 Route::get('/obtener_token', [PaneladminController::class, 'obtener_token'])->name('obtener_token');
 Route::post ('/registrar_usuario', [PaneladminController::class, 'registrar_usuario'])->name('registrar_usuario');
+Route::post ('/panel_admin_login', [PaneladminController::class, 'panel_admin_login'])->name('panel_admin_login');
+Route::post ('/primera_pass', [PaneladminController::class, 'primera_pass'])->name('primera_pass');
 
 
 //Route::get('/Dashboard', [PaneladminController::class, 'list_appointment'])->name('Dashboard');

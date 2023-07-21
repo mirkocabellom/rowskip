@@ -155,4 +155,44 @@ class Consultas extends GuzzleHttpRequest
 
     	return $jsonResponse;
 	}
+
+	public function cons_user($datos)
+	{
+		$token = $this->obtener_token();
+		
+		$headers = [
+			'Content-Type' => 'application/json',
+		    'X-Requested-with' => 'XMLHttpRequest',
+		    'Authorization' => 'Bearer ' . $token,
+		];
+
+		$response = $this->client->post("api/auth/cons_user", [
+		    'headers' => $headers,
+			'json' => $datos
+		]);
+
+		$jsonResponse = $response->getBody()->getContents();
+
+    	return $jsonResponse;
+	}
+
+	public function primera_pass($datos)
+	{
+		$token = $this->obtener_token();
+		
+		$headers = [
+			'Content-Type' => 'application/json',
+		    'X-Requested-with' => 'XMLHttpRequest',
+		    'Authorization' => 'Bearer ' . $token,
+		];
+
+		$response = $this->client->post("api/auth/primera_pass", [
+		    'headers' => $headers,
+			'json' => $datos
+		]);
+
+		$jsonResponse = $response->getBody()->getContents();
+
+    	return $jsonResponse;
+	}
 }

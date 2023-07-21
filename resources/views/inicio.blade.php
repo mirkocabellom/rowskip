@@ -21,19 +21,19 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                <form action="#" class="signin-form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Usuario" required>
+                        <form class="signin-form" id="cons_user" action="/cons_user" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Usuario" required id="usu_rut">
+                            </div>
+                            <div class="form-group">
+                                <input id="password-field" type="password" class="form-control" placeholder="Contraseña" required id="usu_pass">
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Iniciar Sesión</button>
+                            </div>
+                        </form>
                     </div>
-                <div class="form-group">
-                  <input id="password-field" type="password" class="form-control" placeholder="Contraseña" required>
-                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="form-control btn btn-primary submit px-3">Iniciar Sesión</button>
-                </div>
-              </form>
-              </div>
                 </div>
             </div>
         </div>
