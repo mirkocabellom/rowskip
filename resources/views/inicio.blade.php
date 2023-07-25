@@ -12,36 +12,38 @@
     </head>
     <body class="img js-fullheight" style="background-image: url(/bg.jpg);">
     <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">SkipRow</h2>
+        <form class="signin-form" id="panel_admin_login" action="{{ route('panel_admin_login') }}" method="POST">
+            @csrf            
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">SkipRow</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="login-wrap p-0">
-                        <form class="signin-form" id="cons_user" action="/cons_user" method="POST">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="login-wrap p-0">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Usuario" required id="usu_rut">
+                                <input type="text" class="form-control" placeholder="Usuario" required name="usu_rut" id="usu_rut">
                             </div>
                             <div class="form-group">
-                                <input id="password-field" type="password" class="form-control" placeholder="Contraseña" required id="usu_pass">
+                                <input id="password-field" type="password" class="form-control" placeholder="Contraseña" required name="usu_pass"  id="usu_pass">
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary submit px-3">Iniciar Sesión</button>
+                                <button type="submit" class="form-control btn btn-primary submit px-3" id="id_btn_inicio">Iniciar Sesión</button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
         <script src="/js/popper.js"></script>
         <script src="/js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     </body>
 </html>

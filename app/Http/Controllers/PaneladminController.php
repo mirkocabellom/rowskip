@@ -45,14 +45,6 @@ class PaneladminController extends Controller
         return view('citas',compact('consultas'));
     }
 
-    public function find_appointment_pac(Request $request)
-    {
-        $pac_rut='14336486-0';
-        $est_cod='100';
-        $consultas = $this->consultas->find_appointment_pac($pac_rut,$est_cod);
-        return view('totem',compact('consultas'));
-    }
-
     public function listuser(Request $request)
     {
         $est_cod='100';
@@ -90,7 +82,6 @@ class PaneladminController extends Controller
             'USU_RUT' => $usu_rut,
             'PASSWORD' => $password
         ];
-
         try {
             $usuario = $this->consultas->cons_user($datos);
     
@@ -98,10 +89,10 @@ class PaneladminController extends Controller
                 $request->session()->flash('success', 'Usuario correcto');
                 return redirect()->route('panel');
             } else {
-                $request->session()->flash('error', 'El usuario o contraseña es incorrecta');
+                return redirect()->back()->with('error', 'Usuario o contraseña incorrectos');
             }
         } catch (\Exception $e) {
-            $request->session()->flash('error', 'Error 500: El usuario o contraseña es incorrecta');
+            return redirect()->back()->with('error', 'Usuario o contraseña incorrectos');
         }
     
         return redirect()->back();
@@ -109,8 +100,8 @@ class PaneladminController extends Controller
 
     public function primera_pass(Request $request)
     {
-        // $usu_cod = $request->input('usu_cod');
-        // $password = $request->input('password');
+        $usu_cod = $request->input('usu_cod');
+        $password = $request->input('password');
         $estado = 0;
 
         // Cifrar la contraseña
@@ -131,5 +122,4 @@ class PaneladminController extends Controller
 
         return redirect()->back();
     }
-
 }

@@ -76,20 +76,36 @@ class Consultas extends GuzzleHttpRequest
 		return json_decode($response->getBody(), true);	
 	}
 
-	public function find_appointment_pac($pac_rut,$est_cod)
+	public function find_appointment_pac($pac_rut, $est_cod)
 	{
-		$token = $this->obtener_token();
-		$headers = [
-			'Content-Type' => 'application/json',
-		    'X-Requested-with' => 'XMLHttpRequest',
-		    'Authorization' => 'Bearer ' . $token,
-		];
-		$response = $this->client->get("api/auth/{$pac_rut}/{$est_cod}", [
-		    'headers' => $headers
-		]);
+		try {
+			$token = $this->obtener_token();
+			$headers = [
+				'Content-Type' => 'application/json',
+				'X-Requested-with' => 'XMLHttpRequest',
+				'Authorization' => 'Bearer ' . $token,
+			];
 
-		return json_decode($response->getBody(), true);	
+			$response = $this->client->get("api/auth/{$pac_rut}/{$est_cod}", [
+				'headers' => $headers
+			]);
+
+			$data = json_decode($response->getBody(), true);
+
+			// Verificar si el resultado contiene el campo 'error'
+			if (isset($data['error'])) {
+				// Aquí puedes personalizar el mensaje de error según lo que necesites
+				return ['message' => 'Appointment not found.'];
+			}
+
+			return $data;
+		} catch (\Exception $e) {
+			// Aquí puedes manejar el error de la manera que consideres adecuada
+			// Por ejemplo, puedes devolver un mensaje de error genérico o un código de estado 500
+			return ['message' => 'An error occurred while fetching the appointment.', 'error' => $e->getMessage()];
+		}
 	}
+
 
 	public function confirmed_appointment($id)
 	{
@@ -159,21 +175,18 @@ class Consultas extends GuzzleHttpRequest
 	public function cons_user($datos)
 	{
 		$token = $this->obtener_token();
-		
 		$headers = [
 			'Content-Type' => 'application/json',
-		    'X-Requested-with' => 'XMLHttpRequest',
-		    'Authorization' => 'Bearer ' . $token,
+			'X-Requested-with' => 'XMLHttpRequest',
+			'Authorization' => 'Bearer ' . $token,
 		];
 
-		$response = $this->client->post("api/auth/cons_user", [
-		    'headers' => $headers,
+		$response = $this->client->post("api/auth/v1/usu/cons_user", [
+			'headers' => $headers,
 			'json' => $datos
 		]);
 
-		$jsonResponse = $response->getBody()->getContents();
-
-    	return $jsonResponse;
+		return json_decode($response->getBody(), true);   
 	}
 
 	public function primera_pass($datos)
