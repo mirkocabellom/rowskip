@@ -18,6 +18,7 @@ Route::get('/obtener_token', [PaneladminController::class, 'obtener_token'])->na
 Route::post('/registrar_usuario', [PaneladminController::class, 'registrar_usuario'])->name('registrar_usuario');
 Route::post('/primera_pass', [PaneladminController::class, 'primera_pass'])->name('primera_pass');
 Route::post('/panel_admin_login', [PaneladminController::class, 'panel_admin_login'])->name('panel_admin_login');
+Route::post('/confirmar', [PaneladminController::class, 'confirmar'])->name('confirmar');
 
 //Route::get('/Dashboard', [PaneladminController::class, 'list_appointment'])->name('Dashboard');
 Route::get('/totem', [TotemController::class, 'find_appointment_pac'])->name('totem');

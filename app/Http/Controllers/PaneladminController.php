@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 use App\Repositories\Consultas;
+use App\Repositories\ConsultasRs;
 use Illuminate\Http\Request;
 
 class PaneladminController extends Controller
 {
     protected $consultas;
+    protected $consrs;
 
-    public function __construct(Consultas $consultas)
+    public function __construct(Consultas $consultas, ConsultasRs $consrs)
     {
         $this->consultas = $consultas;
+        $this->consrs = $consrs;
     }
 
     public function index(Request $request)
@@ -48,8 +51,29 @@ class PaneladminController extends Controller
     public function listuser(Request $request)
     {
         $est_cod='100';
-        $consultas = $this->consultas->listuser($est_cod);
+        $consultas= $this->consrs->listuser($est_cod);
         return view('usuario',compact('consultas'));
+    }
+
+    public function confirmar(Request $request)
+    {
+        $id = $request->input('id_cita');
+    
+        try {
+            $request->session()->flash('success', 'Cita confirmada exitosamente');
+            $resultado = $this->consrs->confirmed_appointment($id);
+    
+            try {
+                return $resultado;
+            } catch (\Exception $e) {
+                if ($e->getCode() == 403) {
+                    return redirect()->back();
+                }
+                $request->session()->flash('error', $errorMessage);
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'No se pudo confirmar la cita. Inténtalo de nuevo más tarde.');
+        }
     }
 
     public function registrar_usuario(Request $request)
@@ -64,7 +88,7 @@ class PaneladminController extends Controller
         ];
 
         try {
-            $response = $this->consultas->registrar_usuario($datos);
+            $response = $this->consrs->registrar_usuario($datos);
             $request->session()->flash('success', 'Usuario registrado correctamente');
         } catch (\Exception $e) {
             $request->session()->flash('error', 'Error 500: El usuario ya existe');
@@ -83,7 +107,7 @@ class PaneladminController extends Controller
             'PASSWORD' => $password
         ];
         try {
-            $usuario = $this->consultas->cons_user($datos);
+            $usuario = $this->consrs->cons_user($datos);
     
             if ($usuario) {
                 $request->session()->flash('success', 'Usuario correcto');
@@ -114,7 +138,7 @@ class PaneladminController extends Controller
         ];
 
         try {
-            $response = $this->consultas->primera_password($datos);
+            $response = $this->consrs->primera_password($datos);
             $request->session()->flash('success', 'Contraseña cambiada correctamente');
         } catch (\Exception $e) {
             $request->session()->flash('error', 'Error al cambiar la contraseña');

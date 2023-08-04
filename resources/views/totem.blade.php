@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="Haskell" />
-        <title>SkipRow - Check-In</title>
+        <title>SkipRow - Totem</title>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -46,46 +46,46 @@
                     <div class="container d-flex align-items-center flex-column">
                         <div class="row">
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number1"><b>1</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number1"><b>1</b></button>
                             </div>
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number2"><b>2</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number2"><b>2</b></button>
                             </div>
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number3"><b>3</b></div>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-top: 1%;">
-                            <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number4"><b>4</b></div>
-                            </div>
-                            <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number5"><b>5</b></div>
-                            </div>
-                            <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number6"><b>6</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number3"><b>3</b></button>
                             </div>
                         </div>
                         <div class="row" style="margin-top: 1%;">
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number7"><b>7</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number4"><b>4</b></button>
                             </div>
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number8"><b>8</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number5"><b>5</b></button>
                             </div>
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number9"><b>9</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number6"><b>6</b></button>
                             </div>
                         </div>
                         <div class="row" style="margin-top: 1%;">
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number0"><b>0</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number7"><b>7</b></button>
                             </div>
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_numberK"><b>K</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number8"><b>8</b></button>
                             </div>
                             <div class="col">
-                                <div class="btn btn-primary btn-xl " name="btn_number" id="id_btn_numberX"><b>X</b></div>
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number9"><b>9</b></button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 1%;">
+                            <div class="col">
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_number0"><b>0</b></button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_numberK"><b>K</b></button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary btn-xl " name="btn_number" id="id_btn_numberX"><b>X</b></button>
                             </div>
                         </div>
                     </div>

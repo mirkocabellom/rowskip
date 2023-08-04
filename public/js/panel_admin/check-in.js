@@ -1,4 +1,6 @@
 var conc = '';
+var rut = ''; 
+
 $("#id_btn_number1").click(function(){
     if (conc.length<9){
         conc +=  "1";
